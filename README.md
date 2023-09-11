@@ -11,10 +11,13 @@ FROM baseImage // ex: node
 
 WORKDIR /app //Path from all the commands will be executed
 
+COPY package.json /app // Copy only the package.json to enable cache on dependencies
+
+RUN npm install // run a command inside the image
+
 COPY . /app // First path(.): all the files in the current path
          // Second path(/app): Where is going to be copy in the image, in the workdir path 
 
-RUN npm install // run a command inside the image
 
 EXPOSE 80 // Expose from the container the port 80 to our local environment
 
