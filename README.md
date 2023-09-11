@@ -5,6 +5,21 @@ This is a repo to follow [this](https://www.udemy.com/course/docker-kubernetes-t
 * [Docker desktop](https://docs.docker.com/desktop/install/mac-install/).
 
 ### The Dockerfile 🦺
+Base structure:
+```
+FROM baseImage // ex: node
+
+WORKDIR /app //Path from all the commands will be executed
+
+COPY . /app // First path(.): all the files in the current path
+         // Second path(/app): Where is going to be copy in the image, in the workdir path 
+
+RUN npm install // run a command inside the image
+
+EXPOSE 80 // Expose from the container the port 80 to our local environment
+
+CMD ["node", "server.js"] // starts the container or project. Different from RUN command. RUN for image and CMD to container.
+```
 
 ### Commands 🧑‍💻
 Builds an image with the Dockerfile configuration
@@ -13,7 +28,7 @@ docker build .
 ```
 To run the container
 ```
-docker run -p port:port sha256_id
+docker run -p local-port:image-port sha256_id
 ```
 List of images running
 ```
