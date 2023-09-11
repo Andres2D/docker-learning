@@ -23,3 +23,7 @@ Stops the image by name
 ```
 docker stop image_name
 ```
+Run a specific software with interactive shell
+```
+docker run -it image_name
+```
