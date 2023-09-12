@@ -47,7 +47,7 @@ docker run -it image_name
 ```
 Start a previous created container in detached way
 ```
-docker start (-a to start in attached mode) container_name
+docker start (-a to start in attached mode) (-i to interactive shell) container_name
 ```
 Attach terminal to a running container
 ```
@@ -56,4 +56,20 @@ docker attach container_name
 Get the history logs of a detached container
 ```
 docker logs container_name (-f to attach terminal for future logs)
+```
+Remove containers
+```
+docker rm container_name container_name container_name ... 
+```
+List images
+```
+docker images
+```
+Remove images
+```
+docker rmi image_id image_id image_id
+```
+Remove all stopped containers
+```
+docker container prune
 ```
