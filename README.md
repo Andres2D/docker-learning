@@ -73,3 +73,7 @@ Remove all stopped containers
 ```
 docker container prune
 ```
+Inspect an image
+```
+docker image inspect image_id
+```
