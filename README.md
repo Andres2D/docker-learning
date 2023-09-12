@@ -29,11 +29,11 @@ Builds an image with the Dockerfile configuration
 ```
 docker build .
 ```
-To run the container
+To create and run a new container base on an image in attached way
 ```
-docker run -p local-port:image-port sha256_id
+docker run -p local-port:image-port (-d to start it in detached way) sha256_id
 ```
-List of images running
+List of images running (-a to see all images)
 ```
 docker ps
 ```
@@ -44,4 +44,16 @@ docker stop image_name
 Run a specific software with interactive shell
 ```
 docker run -it image_name
+```
+Start a previous created container in detached way
+```
+docker start (-a to start in attached mode) container_name
+```
+Attach terminal to a running container
+```
+docker attach container_name
+```
+Get the history logs of a detached container
+```
+docker logs container_name (-f to attach terminal for future logs)
 ```
