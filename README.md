@@ -31,7 +31,7 @@ docker build .
 ```
 To create and run a new container base on an image in attached way
 ```
-docker run -p local-port:image-port (-d to start it in detached way) sha256_id
+docker run -p local-port:image-port (-d to start it in detached way) (-rm to remove when stopped) sha256_id
 ```
 List of images running (-a to see all images)
 ```
