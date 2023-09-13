@@ -24,6 +24,16 @@ EXPOSE 80 // Expose from the container the port 80 to our local environment
 CMD ["node", "server.js"] // starts the container or project. Different from RUN command. RUN for image and CMD to container.
 ```
 
+### DockerHub
+Share an image
+```
+docker push image_name
+```
+Pull an image
+```
+docker pull image_name
+```
+
 ### Commands 🧑‍💻
 Builds an image with the Dockerfile configuration
 ```
@@ -92,4 +102,8 @@ docker run --name containerName
 Name an image
 ```
 docker build -t tagName:tagVersion .
+```
+Rename a docker image
+```
+docker tag old_name:old_tag new_name:new_tag
 ```
