@@ -77,3 +77,12 @@ Inspect an image
 ```
 docker image inspect image_id
 ```
+Copy assets into a container
+```
+docker cp path_from(outside of the container) container_name:/path_to(inside the container)
+```
+Get assets from container
+```
+docker cp container_name:/path_from(inside the container) path_to(outside of the container)
+
+```
