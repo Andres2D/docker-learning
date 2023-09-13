@@ -7,7 +7,7 @@ This is a repo to follow [this](https://www.udemy.com/course/docker-kubernetes-t
 ### The Dockerfile 🦺
 Base structure:
 ```
-FROM baseImage // ex: node
+FROM baseImage // ex: node || node:version
 
 WORKDIR /app //Path from all the commands will be executed
 
@@ -84,5 +84,12 @@ docker cp path_from(outside of the container) container_name:/path_to(inside the
 Get assets from container
 ```
 docker cp container_name:/path_from(inside the container) path_to(outside of the container)
-
+```
+Name a container
+```
+docker run --name containerName
+```
+Name an image
+```
+docker build -t tagName:tagVersion .
 ```
