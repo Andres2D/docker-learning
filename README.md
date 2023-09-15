@@ -21,6 +21,8 @@ COPY . /app // First path(.): all the files in the current path
 
 EXPOSE 80 // Expose from the container the port 80 to our local environment
 
+VOLUME [ "/path_file_to_persist/" ] //persist data from container path
+
 CMD ["node", "server.js"] // starts the container or project. Different from RUN command. RUN for image and CMD to container.
 ```
 
@@ -106,4 +108,16 @@ docker build -t tagName:tagVersion .
 Rename a docker image
 ```
 docker tag old_name:old_tag new_name:new_tag
+```
+List all volumes
+```
+docker volume ls 
+```
+Create volume with name
+```
+docker run -v volume_name:/volume/path (inside of container) image_name
+```
+Remove anonymous volumes
+```
+docker volume prune
 ```
