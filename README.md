@@ -30,7 +30,7 @@ VOLUME [ "/path_file_to_persist/" ] //persist data from container path
 CMD ["node", "server.js"] // starts the container or project. Different from RUN command. RUN for image and CMD to container.
 ```
 
-### .dockerignore
+### .dockerignore 📝
 To specify which folders and files we don't want to copy with the COPY instruction in the Dockerfile
 ```
 node_modules
@@ -38,7 +38,7 @@ Dockerfile
 .git
 ```
 
-### DockerHub
+### DockerHub 🚀
 Share an image
 ```
 docker push image_name
@@ -48,7 +48,7 @@ Pull an image
 docker pull image_name
 ```
 
-### Docker network
+### Docker network 🌐
 Special host to connect docker container with the local machine
 ```
 host.docker.internal
