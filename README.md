@@ -48,6 +48,16 @@ Pull an image
 docker pull image_name
 ```
 
+### Docker network
+Special host to connect docker container with the local machine
+```
+host.docker.internal
+```
+Example with mongo DB:
+```
+'mongodb://host.docker.internal:27017/swfavorites'
+```
+
 ### Commands 🧑‍💻
 Builds an image with the Dockerfile configuration
 ```
