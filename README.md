@@ -9,6 +9,7 @@ Base structure:
 ```
 FROM baseImage // ex: node || node:version
 
+
 WORKDIR /app //Path from all the commands will be executed
 
 COPY package.json /app // Copy only the package.json to enable cache on dependencies
@@ -17,6 +18,8 @@ RUN npm install // run a command inside the image
 
 COPY . /app // First path(.): all the files in the current path
          // Second path(/app): Where is going to be copy in the image, in the workdir path 
+
+ARG ARGUMENT_NAME=ARGUMENT_VALUE // Set argument values
 
 ENV PORT 80 // Add env variables (ENV Variable_name default value)
 
@@ -158,3 +161,7 @@ Setting ENV from file
 ```
 docker run (...) --env-file ./.env (...)
 ``` 
+Build an image with a specified argument
+```
+docker build (...) --build-arg ARGUMENT_NAME=ARGUMENT_VALUE .
+```
