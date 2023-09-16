@@ -129,3 +129,7 @@ Work with node modules and bind volumes
 ```
 docker run -v "full_path/":/app image_name -v /app/node_modules
 ```
+Docker binds full command example
+```
+docker run -d -p 3000:80 --rm --name feedback-app -v feedback:/app/feedback -v "/Users/andresalcaraz/Development/docker/data-volumes-01-starting-setup":/app -v /app/node_modules feedback-node:volumes
+```
