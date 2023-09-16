@@ -74,6 +74,22 @@ ex: 'mongodb://172.17.0.2/swfavorites',
 
 Other option os to create container networks
 
+1. Create a network
+```
+docker network create network_name
+``` 
+2. Start a container with the network specification
+```
+docker run -d --name mongodb --network favorites-net mongo
+```
+3. Specify the container network in the code
+Connect with a container network 'mongodb://docker_container_name:27017/swfavorites',
+
+4. Start the other container in the same network
+```
+docker run --name favorites -d --network favorites-net --rm -p 3000:3000 favorites-node
+```
+
 ### Commands 🧑‍💻
 Builds an image with the Dockerfile configuration
 ```
@@ -190,4 +206,8 @@ docker run (...) --env-file ./.env (...)
 Build an image with a specified argument
 ```
 docker build (...) --build-arg ARGUMENT_NAME=ARGUMENT_VALUE .
+```
+List networks 
+```
+docker network ls
 ```
