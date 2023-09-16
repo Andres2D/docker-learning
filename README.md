@@ -18,6 +18,7 @@ RUN npm install // run a command inside the image
 COPY . /app // First path(.): all the files in the current path
          // Second path(/app): Where is going to be copy in the image, in the workdir path 
 
+ENV PORT 80 // Add env variables (ENV Variable_name default value)
 
 EXPOSE 80 // Expose from the container the port 80 to our local environment
 
@@ -149,3 +150,11 @@ Remove a volume
 ```
 docker volume rm volume_name
 ```
+Setting ENV values in docker run
+```
+docker run (...) --env PORT=8000 (...)
+```
+Setting ENV from file
+```
+docker run (...) --env-file ./.env (...)
+``` 
