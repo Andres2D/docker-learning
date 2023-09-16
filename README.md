@@ -26,6 +26,14 @@ VOLUME [ "/path_file_to_persist/" ] //persist data from container path
 CMD ["node", "server.js"] // starts the container or project. Different from RUN command. RUN for image and CMD to container.
 ```
 
+### .dockerignore
+To specify which folders and files we don't want to copy with the COPY instruction in the Dockerfile
+```
+node_modules
+Dockerfile
+.git
+```
+
 ### DockerHub
 Share an image
 ```
@@ -127,9 +135,17 @@ docker run -v "full_path/":/app image_name
 ```
 Work with node modules and bind volumes
 ```
-docker run -v "full_path/":/app image_name -v /app/node_modules
+docker run -v "full_path/:/app:ro(if is read only)" image_name -v /app/node_modules
 ```
 Docker binds full command example
 ```
-docker run -d -p 3000:80 --rm --name feedback-app -v feedback:/app/feedback -v "/Users/andresalcaraz/Development/docker/data-volumes-01-starting-setup":/app -v /app/node_modules feedback-node:volumes
+docker run -d -p 3000:80 --rm --name feedback-app -v feedback:/app/feedback -v "/Users/andresalcaraz/Development/docker/data-volumes-01-starting-setup":/app -v /app/temp -v /app/node_modules feedback-node:volumes
+```
+Create a new volume
+```
+docker volume create volume_name
+```
+Remove a volume
+```
+docker volume rm volume_name
 ```
