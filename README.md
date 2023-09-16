@@ -121,3 +121,11 @@ Remove anonymous volumes
 ```
 docker volume prune
 ```
+Create bind volume to listen changes
+```
+docker run -v "full_path/":/app image_name
+```
+Work with node modules and bind volumes
+```
+docker run -v "full_path/":/app image_name -v /app/node_modules
+```
