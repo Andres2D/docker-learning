@@ -58,6 +58,22 @@ Example with mongo DB:
 'mongodb://host.docker.internal:27017/swfavorites'
 ```
 
+Communication between containers:
+1. Run the mongo image
+```
+docker run -d --name mongodb mongo
+```
+2. Inspect the mongodb container
+```
+docker container inspect mongodb
+```
+3. Get the IPAddress from the inspect data and change it in the app connection
+```
+ex: 'mongodb://172.17.0.2/swfavorites',
+```
+
+Other option os to create container networks
+
 ### Commands 🧑‍💻
 Builds an image with the Dockerfile configuration
 ```
